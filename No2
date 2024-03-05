@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class No2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukan detik : ");
+        int totalDetik = scanner.nextInt();
+
+        int currentDetik = totalDetik % 60;
+        int totalMenit = totalDetik / 60;
+        int currentMenit = totalMenit % 60;
+        int totalJam = totalMenit / 60;
+        int currentJam = totalJam % 24;
+
+        System.out.println("Hasil : " + currentJam + ":" + currentMenit + ":" + currentDetik);
+    }
+}
