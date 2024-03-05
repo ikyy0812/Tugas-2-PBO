@@ -1,24 +1,34 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import javax.swing.JOptionPane;
+import java.util.Scanner; // Perintah impor untuk kelas Scanner
 
 public class No1 {
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        // Menggunakan Scanner
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input NIM Anda (menggunakan Scanner): ");
+        String nimScanner = scanner.nextLine();
 
-    System.out.print("imput nim anda: ");
-    String nim = scanner.nextLine();
+        // Menggunakan BufferedReader
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Mohon masukkan nama Anda (menggunakan BufferedReader): ");
+        String namaBufferedReader = reader.readLine();
 
-    System.out.print("Mohon masukan nama anda: ");
-    String nama = scanner.nextLine();
+        // Menggunakan JOptionPane
+        String jurusanJOptionPane = JOptionPane.showInputDialog("Mohon masukkan jurusan Anda (menggunakan JOptionPane):");
 
-    System.out.print("Mohon masukan jurusan anda: ");
-    String jurusan = scanner.nextLine();
+        // Output menggunakan System.out.println
+        System.out.println("\nOutput menggunakan System.out.println:");
+        System.out.println("NIM (Scanner): " + nimScanner);
+        System.out.println("Nama (BufferedReader): " + namaBufferedReader);
+        System.out.println("Jurusan (JOptionPane): " + jurusanJOptionPane);
 
-    System.out.print("Mohon masukan fakultas anda: ");
-    String fakultas = scanner.nextLine();
-
-    System.out.println("\nNim: " + nim);
-    System.out.println("Nama: " + nama);
-    System.out.println("Jurusan: " + jurusan);
-    System.out.println("Fakultas: " + fakultas);
-  } 
+        // Output menggunakan JOptionPane
+        JOptionPane.showMessageDialog(null, "Output menggunakan JOptionPane:\n" +
+                "NIM (Scanner): " + nimScanner + "\n" +
+                "Nama (BufferedReader): " + namaBufferedReader + "\n" +
+                "Jurusan (JOptionPane): " + jurusanJOptionPane);
+    }
 }
